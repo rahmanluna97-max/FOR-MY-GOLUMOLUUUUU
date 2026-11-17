@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOVE.exe | DEEP</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  background: #050505;
+  color: #00ff88;
+  font-family: monospace;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  border: 1px solid #00ff88;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ff8833;
+}
+
+.heart {
+  text-align: center;
+  color: #ff1744;
+  font-size: 55px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.15); }
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.terminal {
+  line-height: 2;
+  font-size: 14px;
+  min-height: 220px;
+}
+
+button {
+  background: #00ff88;
+  color: black;
+  border: none;
+  padding: 14px;
+  font-weight: bold;
+  font-family: monospace;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#message {
+  display: none;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  line-height: 2;
+  animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.question {
+  color: #ff1744;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  color: #666;
+  font-size: 11px;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="heart">♥</div>
+<h1>LOVE.exe</h1>
+
+<div class="terminal" id="terminal"></div>
+
+<button id="openBtn" onclick="openMessage()">
+OPEN SECRET MESSAGE
+</button>
+
+<div id="message">
+<h2 style="color:#00ff88">ACCESS GRANTED, DEEP.</h2>
+
+<p>You know something, Deep?</p>
+
+<p>
+Out of all the random people in this world,
+you somehow became someone really special to me.
+</p>
+
+<p>
+I don't know what the future holds,
+but I know that I want you to be a part of mine.
+</p>
+
+<p>So, I have one question for you...</p>
+
+<p class="question">Will you be mine? ❤️</p>
+
+<p>— Someone who chose you.</p>
+</div>
+
+<div class="footer">
+ENCRYPTED WITH FEELINGS | LOVE.exe
+</div>
+
+</div>
+
+<script>
+const lines = [
+"> Initializing LOVE.exe...",
+"> Connecting to DEEP...",
+"> Searching for someone special...",
+"> Identity verified: DEEP",
+"> Scanning emotional database...",
+"> One special person detected.",
+"> Heart.exe activated ❤️",
+"> Preparing secret message...",
+"> Awaiting permission..."
+];
+
+let index = 0;
+
+function typeLine() {
+  if (index < lines.length) {
+    document.getElementById("terminal").innerHTML +=
+      "<div>" + lines[index] + "</div>";
+    index++;
+    setTimeout(typeLine, 850);
+  }
+}
+
+typeLine();
+
+function openMessage() {
+  document.getElementById("message").style.display = "block";
+  document.getElementById("openBtn").style.display = "none";
+}
+</script>
+
+</body>
+</html>
